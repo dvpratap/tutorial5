@@ -9,6 +9,10 @@ let list = [
     { id: 2, firstName: 'Jassica', email: 'jassica@dal.ca' }
   ];
 
+app.get('/users', (req, res) => {
+    return res.status(200).json({ message: "users retriieved", success: true, list });
+}); 
+
 app.put('/update/:id', (req, res) => {
     const id = req.params.id;
     const index = list.findIndex(item => item.id === parseInt(id));
